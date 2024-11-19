@@ -8,9 +8,9 @@ from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
 import os
 
-LANGCHAIN_API_KEY = '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'
+LANGCHAIN_API_KEY = 'use langsmith api key here'
 LANGCHAIN_TRACING_V2 ="true"
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = "use groq api key here"
 
 chunk_size = 1000
 chunk_overlap = 200

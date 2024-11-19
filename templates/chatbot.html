@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and Output Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        label, input, button, p {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <p>File: <strong>{{ filename }}</strong></p>
+    <p>Stored items in vectorDB: <strong>{{ count }}</strong></p>
+    <p>Path <strong>{{ filepath }}</strong></p>
+    <div class="container">
+        <h2>Simple Input and Output</h2>
+        <form action="/ask" method="POST">
+            <label for="question">Enter Text:</label>
+            <input type="text" id="question" name="question" placeholder="Type something..." required />
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/reset" method="POST">
+            <button type="submit" style="background-color: red; color: white; padding: 10px; border: none; cursor: pointer;">
+                Reset VectorDB
+            </button>
+        </form>
+
+        {% if result %}
+            <p class="result">Result: {{ result }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
